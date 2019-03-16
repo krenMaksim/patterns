@@ -10,7 +10,7 @@ import com.kren.pattern.abstr.factory.shape.Triangle.TriangleSize;
 public class ShapeFactory {
 
     public static Size newShape(Kind kindShape) {
-	return kindShape.getShapeSize();
+	return kindShape.getSizeInstance();
     }
 
     public static enum Kind {
@@ -26,7 +26,7 @@ public class ShapeFactory {
 	    this.shapeSize = shapeSize;
 	}
 
-	Size getShapeSize() {
+	Size getSizeInstance() {
 	    return shapeSize.get();
 	}
     }
