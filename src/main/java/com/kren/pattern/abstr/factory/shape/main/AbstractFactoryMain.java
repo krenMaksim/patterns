@@ -30,7 +30,7 @@ public class AbstractFactoryMain {
 	shape.show();
 	System.out.println("shape.square() " + shape.square());
 
-	// java.lang.UnsupportedOperationException
+	// throw BadSizeDefinitionExeption
 	shape = ShapeFactory.newShape(Kind.CIRCLE)
 	                    .setHeight(55)
 	                    .setWeight(10)
