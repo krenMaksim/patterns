@@ -4,8 +4,8 @@ class Circle extends Shape {
 
     private final double radius;
 
-    public Circle(Size circleSize) {
-	this.radius = circleSize.radius;
+    public Circle(ShapeBuilder circleBuilder) {
+	this.radius = circleBuilder.radius;
     }
 
     @Override
@@ -13,7 +13,7 @@ class Circle extends Shape {
 	return Math.PI * radius * radius;
     }
 
-    public static class CircleSize extends Size {
+    public static class CircleBuilder extends ShapeBuilder {
 
 	@Override
 	public Shape build() {
@@ -21,7 +21,7 @@ class Circle extends Shape {
 	}
 
 	@Override
-	public Size setRadius(double radius) {
+	public ShapeBuilder setRadius(double radius) {
 	    this.radius = radius;
 	    return this;
 	}

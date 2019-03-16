@@ -12,26 +12,26 @@ public abstract class Shape {
 
     abstract public double square();
 
-    public static abstract class Size {
+    public static abstract class ShapeBuilder {
 
 	double height;
 	double weight;
 	double radius;
 
-	Size() {
+	ShapeBuilder() {
 	}
 
 	abstract public Shape build();
 
-	public Size setHeight(double height) {
+	public ShapeBuilder setHeight(double height) {
 	    throw new BadSizeDefinitionExeption();
 	}
 
-	public Size setWeight(double weight) {
+	public ShapeBuilder setWeight(double weight) {
 	    throw new BadSizeDefinitionExeption();
 	}
 
-	public Size setRadius(double radius) {
+	public ShapeBuilder setRadius(double radius) {
 	    throw new BadSizeDefinitionExeption();
 	}
 

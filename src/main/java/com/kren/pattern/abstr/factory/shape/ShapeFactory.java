@@ -2,32 +2,32 @@ package com.kren.pattern.abstr.factory.shape;
 
 import java.util.function.Supplier;
 
-import com.kren.pattern.abstr.factory.shape.Circle.CircleSize;
-import com.kren.pattern.abstr.factory.shape.Rectangle.RectangleSize;
-import com.kren.pattern.abstr.factory.shape.Shape.Size;
-import com.kren.pattern.abstr.factory.shape.Triangle.TriangleSize;
+import com.kren.pattern.abstr.factory.shape.Circle.CircleBuilder;
+import com.kren.pattern.abstr.factory.shape.Rectangle.RectangleBuilder;
+import com.kren.pattern.abstr.factory.shape.Shape.ShapeBuilder;
+import com.kren.pattern.abstr.factory.shape.Triangle.TriangleBuilder;
 
 public class ShapeFactory {
 
-    public static Size newShape(Kind kindShape) {
-	return kindShape.getSizeInstance();
+    public static ShapeBuilder newShape(Kind kindShape) {
+	return kindShape.newBuilderInstance();
     }
 
     public static enum Kind {
-	TRINAGLE(() -> new TriangleSize()),
+	TRINAGLE(() -> new TriangleBuilder()),
 
-	CIRCLE(() -> new CircleSize()),
+	CIRCLE(() -> new CircleBuilder()),
 
-	RECTANGLE(() -> new RectangleSize());
+	RECTANGLE(() -> new RectangleBuilder());
 
-	private Supplier<Size> shapeSize;
+	private Supplier<ShapeBuilder> builder;
 
-	private Kind(Supplier<Size> shapeSize) {
-	    this.shapeSize = shapeSize;
+	private Kind(Supplier<ShapeBuilder> shapeSize) {
+	    this.builder = shapeSize;
 	}
 
-	Size getSizeInstance() {
-	    return shapeSize.get();
+	ShapeBuilder newBuilderInstance() {
+	    return builder.get();
 	}
     }
 }

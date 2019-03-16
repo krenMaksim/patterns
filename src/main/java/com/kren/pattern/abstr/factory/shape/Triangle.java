@@ -5,9 +5,9 @@ class Triangle extends Shape {
     private final double height;
     private final double weight;
 
-    public Triangle(Size triangleSize) {
-	this.weight = triangleSize.weight;
-	this.height = triangleSize.height;
+    public Triangle(ShapeBuilder triangleBuilder) {
+	this.weight = triangleBuilder.weight;
+	this.height = triangleBuilder.height;
     }
 
     @Override
@@ -15,7 +15,7 @@ class Triangle extends Shape {
 	return 0.5 * height * weight;
     }
 
-    public static class TriangleSize extends Size {
+    public static class TriangleBuilder extends ShapeBuilder {
 
 	@Override
 	public Shape build() {
@@ -23,13 +23,13 @@ class Triangle extends Shape {
 	}
 
 	@Override
-	public Size setHeight(double height) {
+	public ShapeBuilder setHeight(double height) {
 	    this.height = height;
 	    return this;
 	}
 
 	@Override
-	public Size setWeight(double weight) {
+	public ShapeBuilder setWeight(double weight) {
 	    this.weight = weight;
 	    return this;
 	}
