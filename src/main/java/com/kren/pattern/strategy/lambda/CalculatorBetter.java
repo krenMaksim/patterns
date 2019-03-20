@@ -7,15 +7,15 @@ class CalculatorBetter {
     private BinaryOperator<Integer> operation;
 
     public CalculatorBetter(OperationType operationType) {
-	this.operation = operationType.getOperation();
+        this.operation = operationType.getOperation();
     }
 
     public Integer calculate(Integer val1, Integer val2) {
-	return operation.apply(val1, val2);
+        return operation.apply(val1, val2);
     }
 
     public void setOperation(OperationType operationType) {
-	this.operation = operationType.getOperation();
+        this.operation = operationType.getOperation();
     }
 
     public static enum OperationType {

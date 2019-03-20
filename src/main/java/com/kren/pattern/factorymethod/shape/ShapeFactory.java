@@ -1,11 +1,11 @@
-package com.kren.pattern.abstr.factory.shape;
+package com.kren.pattern.factorymethod.shape;
+
+import com.kren.pattern.factorymethod.shape.Circle.CircleBuilder;
+import com.kren.pattern.factorymethod.shape.Rectangle.RectangleBuilder;
+import com.kren.pattern.factorymethod.shape.Shape.ShapeBuilder;
+import com.kren.pattern.factorymethod.shape.Triangle.TriangleBuilder;
 
 import java.util.function.Supplier;
-
-import com.kren.pattern.abstr.factory.shape.Circle.CircleBuilder;
-import com.kren.pattern.abstr.factory.shape.Rectangle.RectangleBuilder;
-import com.kren.pattern.abstr.factory.shape.Shape.ShapeBuilder;
-import com.kren.pattern.abstr.factory.shape.Triangle.TriangleBuilder;
 
 public class ShapeFactory {
 

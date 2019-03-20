@@ -1,4 +1,4 @@
-package com.kren.pattern.abstr.factory.shape;
+package com.kren.pattern.factorymethod.shape;
 
 public abstract class Shape {
 

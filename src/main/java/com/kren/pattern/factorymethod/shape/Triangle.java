@@ -1,25 +1,25 @@
-package com.kren.pattern.abstr.factory.shape;
+package com.kren.pattern.factorymethod.shape;
 
-class Rectangle extends Shape {
+class Triangle extends Shape {
 
     private final double height;
     private final double weight;
 
-    public Rectangle(ShapeBuilder triangleBuilder) {
+    public Triangle(ShapeBuilder triangleBuilder) {
 	this.weight = triangleBuilder.weight;
 	this.height = triangleBuilder.height;
     }
 
     @Override
     public double square() {
-	return height * weight;
+	return 0.5 * height * weight;
     }
 
-    public static class RectangleBuilder extends ShapeBuilder {
+    public static class TriangleBuilder extends ShapeBuilder {
 
 	@Override
 	public Shape build() {
-	    return new Rectangle(this);
+	    return new Triangle(this);
 	}
 
 	@Override

@@ -1,8 +1,8 @@
-package com.kren.pattern.abstr.factory.shape.main;
+package com.kren.pattern.factorymethod.shape.main;
 
-import com.kren.pattern.abstr.factory.shape.Shape;
-import com.kren.pattern.abstr.factory.shape.ShapeFactory;
-import com.kren.pattern.abstr.factory.shape.ShapeFactory.Kind;
+import com.kren.pattern.factorymethod.shape.Shape;
+import com.kren.pattern.factorymethod.shape.ShapeFactory;
+import com.kren.pattern.factorymethod.shape.ShapeFactory.Kind;
 
 public class AbstractFactoryMain {
 
