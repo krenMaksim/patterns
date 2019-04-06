@@ -24,7 +24,7 @@ public class Rectangle extends Shape {
 	}
 
 	@Override
-	public Rectangle build() {
+	public Shape build() {
 	    return new Rectangle(this.height, this.weight);
 	}
 
