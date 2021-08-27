@@ -1,6 +1,6 @@
-package com.kren.pattern.abstarctfactory.button;
+package com.kren.pattern.abstract_.factory;
 
-import com.kren.pattern.abstarctfactory.button.OsFactory.Os;
+import com.kren.pattern.abstract_.factory.OsFactory.Os;
 
 class ButtonAbstractFactoryMain {
 

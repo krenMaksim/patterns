@@ -1,4 +1,4 @@
-package com.kren.pattern.abstarctfactory.button;
+package com.kren.pattern.abstract_.factory;
 
 abstract class OsFactory {
 
