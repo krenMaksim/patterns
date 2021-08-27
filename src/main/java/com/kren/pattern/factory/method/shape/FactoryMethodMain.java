@@ -1,10 +1,8 @@
-package com.kren.pattern.factorymethod.shape.main;
+package com.kren.pattern.factory.method.shape;
 
-import com.kren.pattern.factorymethod.shape.Shape;
-import com.kren.pattern.factorymethod.shape.ShapeFactory;
-import com.kren.pattern.factorymethod.shape.ShapeFactory.Kind;
+import com.kren.pattern.factory.method.shape.ShapeFactory.Kind;
 
-public class AbstractFactoryMain {
+class FactoryMethodMain {
 
     public static void main(String[] args) {
 	Shape shape = ShapeFactory.newShape(Kind.TRINAGLE)
