@@ -1,5 +1,5 @@
 package com.kren.pattern.abstarctfactory.button;
 
-public interface Checkbox {
+interface Checkbox {
     void paint();
 }

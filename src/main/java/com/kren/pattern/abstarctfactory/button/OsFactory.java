@@ -1,8 +1,8 @@
 package com.kren.pattern.abstarctfactory.button;
 
-public abstract class OsFactory {
+abstract class OsFactory {
 
-    public static OsFactory getOs(Os os) {
+    public static OsFactory newInstance(Os os) {
         return os.getFactory();
     }
 
