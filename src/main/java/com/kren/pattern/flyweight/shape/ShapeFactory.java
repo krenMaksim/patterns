@@ -5,9 +5,10 @@ import com.kren.pattern.flyweight.template.CircleTemplate;
 import com.kren.pattern.flyweight.template.CircleTemplateStorage;
 
 public class ShapeFactory {
+
     private final CircleTemplateStorage storage;
 
-    public ShapeFactory () {
+    public ShapeFactory() {
         storage = new CircleTemplateStorage();
     }
 

@@ -5,6 +5,7 @@ import com.kren.pattern.flyweight.shape.ShapeColor;
 import com.kren.pattern.flyweight.template.CircleTemplate;
 
 public class CircleFlyweight implements Shape {
+
     private final int coordinateX;
     private final int coordinateY;
     private final CircleTemplate template;

@@ -4,6 +4,7 @@ import com.kren.pattern.flyweight.shape.Shape;
 import com.kren.pattern.flyweight.shape.ShapeColor;
 
 public class Circle implements Shape {
+
     private final int coordinateX;
     private final int coordinateY;
     private final int radius;

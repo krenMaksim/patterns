@@ -6,6 +6,7 @@ import java.util.HashMap;
 import java.util.Map;
 
 public class CircleTemplateStorage {
+
     private final Map<String, CircleTemplate> templates;
 
     public CircleTemplateStorage() {
