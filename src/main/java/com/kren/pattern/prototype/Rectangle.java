@@ -23,7 +23,7 @@ class Rectangle extends Shape {
     }
 
     @Override
-    public Shape clone() {
+    public Rectangle clone() {
         return new Rectangle(this);
     }
 }
