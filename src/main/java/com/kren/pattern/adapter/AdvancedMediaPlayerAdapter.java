@@ -1,6 +1,6 @@
-package com.kren.pattern.adapter.palyer;
+package com.kren.pattern.adapter;
 
-public class AdvancedMediaPlayerAdapter implements MediaPalyer {
+class AdvancedMediaPlayerAdapter implements MediaPalyer {
 
     private final AdvancedMediaPlayer player;
 
