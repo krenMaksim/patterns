@@ -1,10 +1,10 @@
 package com.kren.pattern.decorator;
 
-public abstract class Coffee {
-    
+abstract class Coffee {
+
     private final double price;
     private final String discription;
-    
+
     Coffee(double price, String discription) {
         this.price = price;
         this.discription = discription;

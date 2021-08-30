@@ -1,6 +1,6 @@
 package com.kren.pattern.decorator;
 
-public class DecoratorMain {
+class DecoratorMain {
 
     public static void main(String[] args) {
         Coffee coffee = new WithMilk(new WithMilk(new Latte()));
