@@ -1,8 +1,6 @@
-package com.kren.pattern.facade.shape.main;
+package com.kren.pattern.facade.shape;
 
-import com.kren.pattern.facade.shape.ShapeFacade;
-
-public class FacadeShapeMain {
+class FacadeMain {
 
     public static void main(String[] args) {
         ShapeFacade shape = new ShapeFacade();

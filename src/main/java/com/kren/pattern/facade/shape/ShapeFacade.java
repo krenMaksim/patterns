@@ -1,6 +1,6 @@
 package com.kren.pattern.facade.shape;
 
-public class ShapeFacade {
+class ShapeFacade {
 
     private Triangle triangle;
     private Circle circle;
