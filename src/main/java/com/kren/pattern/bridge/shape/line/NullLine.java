@@ -1,5 +1,7 @@
 package com.kren.pattern.bridge.shape.line;
 
+import java.util.Objects;
+
 public class NullLine extends Line {
     private static final NullLine nullLine = new NullLine();
 
@@ -7,6 +9,8 @@ public class NullLine extends Line {
         return nullLine;
     }
 
-    private NullLine() {}
+    private NullLine() {
+        if (Objects.nonNull(nullLine)) throw new AssertionError();
+    }
 
 }

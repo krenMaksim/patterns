@@ -51,25 +51,20 @@ public abstract class Shape {
     }
 
     public void draw() {
-        String shape = this.getClass()
-                           .getName();
+        String shape = this.getClass().getName();
 
         String color = null;
         String line = null;
 
         if (this.line != nullLine) {
-            line = this.line.getClass()
-                            .getName();
+            line = this.line.getClass().getName();
         }
 
         if (this.color != nullColor) {
-            color = this.color.getClass()
-                              .getName();
+            color = this.color.getClass().getName();
         }
 
-        System.out.println(Stream.of(shape, color, line)
-                                 .filter(str -> Objects.nonNull(str))
-                                 .collect(Collectors.joining("\n")));
+        System.out.println(Stream.of(shape, color, line).filter(str -> Objects.nonNull(str)).collect(Collectors.joining("\n")));
     }
 
     public static enum Type {

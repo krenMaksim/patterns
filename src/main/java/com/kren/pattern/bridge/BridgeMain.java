@@ -1,11 +1,11 @@
-package com.kren.pattern.bridge.shape.main;
+package com.kren.pattern.bridge;
 
 import com.kren.pattern.bridge.shape.Shape;
 import com.kren.pattern.bridge.shape.color.GreenColor;
 import com.kren.pattern.bridge.shape.color.RedColor;
 import com.kren.pattern.bridge.shape.line.DotLine;
 
-public class BridgeShapeMain {
+public class BridgeMain {
 
     public static void main(String[] args) {
         Shape shape = Shape.newInstance(new DotLine(), new RedColor(), Shape.Type.CIRCLE);
