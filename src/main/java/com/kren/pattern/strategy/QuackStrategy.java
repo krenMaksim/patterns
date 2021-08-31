@@ -1,4 +1,4 @@
-package com.kren.pattern.strategy.enumduck;
+package com.kren.pattern.strategy;
 
 interface QuackStrategy {
     void quack();

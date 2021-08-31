@@ -1,11 +1,9 @@
-package com.kren.pattern.strategy.enumduck;
+package com.kren.pattern.strategy;
 
-class FlyThree implements FlyStrategy {
+class FlyTwo implements FlyStrategy {
 
     @Override
     public void fly() {
         System.out.println("flyTwo");
-
     }
-
 }

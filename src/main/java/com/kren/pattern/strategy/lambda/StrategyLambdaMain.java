@@ -1,6 +1,6 @@
 package com.kren.pattern.strategy.lambda;
 
-class Main {
+class StrategyLambdaMain {
 
     public static void main(String[] args) {
 	Calculator calc = new Calculator((val1, val2) -> val1 + val2);

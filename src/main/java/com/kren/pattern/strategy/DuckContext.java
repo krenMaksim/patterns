@@ -1,4 +1,4 @@
-package com.kren.pattern.strategy.enumduck;
+package com.kren.pattern.strategy;
 
 public enum DuckContext implements Duck {
     DUCK_ONE(new QuackOne(), new FlyThree()),

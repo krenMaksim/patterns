@@ -1,9 +1,6 @@
-package com.kren.pattern.strategy.enumduck.main;
+package com.kren.pattern.strategy;
 
-import com.kren.pattern.strategy.enumduck.Duck;
-import com.kren.pattern.strategy.enumduck.DuckContext;
-
-public class DuckMain {
+public class StrategyMain {
 
     public static void main(String[] args) {
         Duck duck = DuckContext.DUCK_ONE;
@@ -18,5 +15,4 @@ public class DuckMain {
         duck.quack();
         duck.fly();
     }
-
 }
