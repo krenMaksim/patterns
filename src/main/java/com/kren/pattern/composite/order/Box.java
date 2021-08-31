@@ -7,6 +7,7 @@ import java.util.Collections;
 import java.util.stream.Stream;
 
 public class Box implements OrderItem {
+    
     public static Box newInstance(Collection<Box> nestedBoxes, Collection<Product> products) {
         return new Box(nestedBoxes, products);
     }
@@ -30,8 +31,7 @@ public class Box implements OrderItem {
     @Override
     public int getPrice() {
         Stream<OrderItem> items = getOrderItems();
-        return items.mapToInt(OrderItem::getPrice)
-                         .sum();
+        return items.mapToInt(OrderItem::getPrice).sum();
     }
 
     private Stream<OrderItem> getOrderItems() {

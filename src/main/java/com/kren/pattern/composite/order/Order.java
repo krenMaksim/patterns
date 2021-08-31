@@ -1,6 +1,7 @@
 package com.kren.pattern.composite.order;
 
 public class Order {
+
     private final Box orderBox;
 
     public Order(Box orderBox) {
