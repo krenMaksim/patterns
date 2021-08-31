@@ -3,6 +3,7 @@ package com.kren.pattern.chain.of.responsibility.logger;
 import com.kren.pattern.chain.of.responsibility.logger.level.LogLevel;
 
 public class FileLogger extends ChainLogger {
+
     public FileLogger(LogLevel level) {
         super(FileLogger.class.getName(), level);
     }

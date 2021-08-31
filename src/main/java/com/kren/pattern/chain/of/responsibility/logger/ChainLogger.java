@@ -5,6 +5,7 @@ import com.kren.pattern.chain.of.responsibility.logger.level.LogLevel;
 import java.util.Objects;
 
 public abstract class ChainLogger {
+
     protected final String loggerClassName;
     protected final LogLevel loggerLevel;
     private ChainLogger next;
@@ -40,6 +41,6 @@ public abstract class ChainLogger {
         this.next = next;
         return next;
     }
-    
+
     abstract void log(String message);
 }

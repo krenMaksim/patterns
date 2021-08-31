@@ -3,6 +3,7 @@ package com.kren.pattern.chain.of.responsibility.logger;
 import com.kren.pattern.chain.of.responsibility.logger.level.LogLevel;
 
 public class DataBaseLogger extends ChainLogger {
+
     public DataBaseLogger(LogLevel level) {
         super(DataBaseLogger.class.getName(), level);
     }
