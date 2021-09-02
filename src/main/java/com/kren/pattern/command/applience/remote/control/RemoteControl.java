@@ -5,7 +5,7 @@ import com.kren.pattern.command.applience.command.Operation;
 import java.util.ArrayList;
 import java.util.List;
 
-public class RemoteControl {
+class RemoteControl {
     private static final int NUMBER_BUTTONS = 4;
 
     private List<Operation> operations;

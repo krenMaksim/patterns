@@ -5,7 +5,7 @@ import com.kren.pattern.command.stock.command.Operation;
 import java.util.LinkedList;
 import java.util.List;
 
-public class Brocker {
+class Brocker {
 
     private final List<Operation> operations;
 

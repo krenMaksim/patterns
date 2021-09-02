@@ -1,6 +1,7 @@
 package com.kren.pattern.command.stock;
 
 public class Stock {
+
     private final String name;
     private final int quantity;
 

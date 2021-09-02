@@ -1,6 +1,7 @@
 package com.kren.pattern.command.applience.command;
 
 public abstract class Operation {
+
     private boolean isOff = true;
 
     Runnable onOperation;

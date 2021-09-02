@@ -5,6 +5,7 @@ import com.kren.pattern.command.stock.Stock;
 import java.util.function.Function;
 
 public abstract class Operation {
+
     final Stock stock;
 
     Operation(Stock stock) {
@@ -15,9 +16,9 @@ public abstract class Operation {
 
     public static enum Type {
         SELL_STOCK(stock -> new SellStock(stock)),
-        
+
         BUY_STOCK(stock -> new BuyStock(stock));
-        
+
         private Function<Stock, Operation> operationCreator;
 
         private Type(Function<Stock, Operation> operationCreator) {

@@ -5,7 +5,7 @@ import com.kren.pattern.command.applience.Light;
 import com.kren.pattern.command.applience.command.LightOffOn;
 import com.kren.pattern.command.applience.command.RadioOffOn;
 
-public class CommandApplienceMain {
+class CommandApplienceMain {
 
     public static void main(String[] args) {
         Light lihgt = null;
