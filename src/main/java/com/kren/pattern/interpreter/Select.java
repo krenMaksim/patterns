@@ -1,4 +1,4 @@
-package com.kren.pattern.interpreter.sql;
+package com.kren.pattern.interpreter;
 
 class Select implements SqlCommand {
     private static final String SELECT = "SELECT";

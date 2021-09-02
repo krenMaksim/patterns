@@ -1,4 +1,4 @@
-package com.kren.pattern.interpreter.sql;
+package com.kren.pattern.interpreter;
 
 interface SqlCommand {
     String interpret(SqlQuery query);

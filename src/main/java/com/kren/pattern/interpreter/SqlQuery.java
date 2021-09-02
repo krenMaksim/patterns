@@ -1,8 +1,8 @@
-package com.kren.pattern.interpreter.sql;
+package com.kren.pattern.interpreter;
 
 import java.util.Objects;
 
-public class SqlQuery {
+class SqlQuery {
     public static Builder createQuery() {
         return new Builder();
     }
