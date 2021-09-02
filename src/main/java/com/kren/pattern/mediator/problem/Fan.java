@@ -4,6 +4,7 @@ import com.kren.pattern.mediator.FanOptions;
 import com.kren.pattern.mediator.PowerSupplier;
 
 public class Fan implements FanOptions {
+
     private final PowerSupplier supplier;
     private boolean on;
 

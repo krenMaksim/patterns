@@ -3,6 +3,7 @@ package com.kren.pattern.mediator.solution;
 import com.kren.pattern.mediator.FanOptions;
 
 public class Fan implements FanOptions {
+
     private boolean on;
     private final Mediator mediator;
 
