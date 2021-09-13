@@ -2,7 +2,7 @@ apply plugin: 'java'
 apply plugin: 'maven'
 
 ext {
-    javaVersion = 1.8
+    javaVersion = 11
     groupValue = 'com.kren.pattern'
     versionValue = '1.0-SNAPSHOT'
 }
