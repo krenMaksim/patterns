@@ -17,6 +17,11 @@ jar {
     version = null
 }
 
-repositories {        
-     maven { url "http://repo.maven.apache.org/maven2" }
+dependencies {
+	compileOnly 'org.projectlombok:lombok:1.18.20'
+	annotationProcessor 'org.projectlombok:lombok:1.18.20'
+}
+
+repositories {     
+     mavenCentral()
 }
