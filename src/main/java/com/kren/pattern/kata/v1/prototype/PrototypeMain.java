@@ -1,4 +1,4 @@
-package com.kren.pattern.prototype.kata.v1;
+package com.kren.pattern.kata.v1.prototype;
 
 class PrototypeMain {
 

@@ -1,4 +1,4 @@
-package com.kren.pattern.bridge.kata.v1;
+package com.kren.pattern.kata.v1.bridge;
 
 import lombok.Getter;
 import lombok.RequiredArgsConstructor;
