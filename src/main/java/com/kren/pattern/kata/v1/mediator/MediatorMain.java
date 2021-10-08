@@ -3,7 +3,7 @@ package com.kren.pattern.kata.v1.mediator;
 import lombok.Getter;
 import lombok.RequiredArgsConstructor;
 
-class MediatorMainProblem {
+class MediatorMain {
 
     public static void main(String[] args) {
 
