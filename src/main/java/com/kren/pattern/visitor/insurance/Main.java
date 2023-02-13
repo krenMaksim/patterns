@@ -12,13 +12,13 @@ class Main {
         BuildingVisitor insuranceAgent = new InsuranceAgent();
 
         Building bank = new Bank();
-        bank.hostVisitor(insuranceAgent);
+        bank.host(insuranceAgent);
 
         Building coffeeShop = new CoffeeShop();
-        coffeeShop.hostVisitor(insuranceAgent);
+        coffeeShop.host(insuranceAgent);
 
         Building hospital = new Hospital();
-        hospital.hostVisitor(insuranceAgent);
+        hospital.host(insuranceAgent);
     }
 
 }

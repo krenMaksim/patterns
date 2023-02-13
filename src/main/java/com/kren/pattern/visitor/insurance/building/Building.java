@@ -4,5 +4,5 @@ import com.kren.pattern.visitor.insurance.BuildingVisitor;
 
 public interface Building {
 
-    void hostVisitor(BuildingVisitor visitor);
+    void host(BuildingVisitor visitor);
 }
