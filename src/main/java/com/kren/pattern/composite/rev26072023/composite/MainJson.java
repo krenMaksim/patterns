@@ -5,6 +5,8 @@ import com.fasterxml.jackson.databind.JsonMappingException;
 import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.ObjectMapper;
 
+import java.util.Iterator;
+
 class MainJson {
     
     /*
@@ -14,16 +16,16 @@ class MainJson {
         {
           "someAttr": {
             "someAttr": {
-              "price": 2
+              "price": 6
             },
-            "price": 2
+            "price": 5
           },
           "someAttrArray": [
             {
-              "price": 2
+              "price": 4
             },
             {
-              "price": 2
+              "price": 3
             },
             {
               "price": 2
@@ -36,10 +38,19 @@ class MainJson {
     public static void main(String[] args) throws JsonMappingException, JsonProcessingException {
         ObjectMapper mapper = new ObjectMapper();
         
-        String json = "{\"someAttr\":{\"someAttr\":{\"price\":2},\"price\":2},\"someAttrArray\":[{\"price\":2},{\"price\":2},{\"price\":2}],\"price\":1}";
+        String json = "{\"someAttr\":{\"someAttr\":{\"price\":6},\"price\":5},\"someAttrArray\":[{\"price\":4},{\"price\":3},{\"price\":2}],\"price\":1}";
 
         JsonNode jsonNode = mapper.readTree(json);
         
+        System.out.println(jsonNode.has("price"));
+        System.out.println(jsonNode.get("price"));
+
+        Iterator<JsonNode> it = jsonNode.elements();
+        while (it.hasNext()) {
+            JsonNode node = it.next();
+            if (node.has("price")) System.out.println(node.get("price"));
+        }
+
         System.out.println(mapper.writerWithDefaultPrettyPrinter().writeValueAsString(jsonNode));
     }
 
