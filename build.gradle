@@ -17,6 +17,10 @@ jar {
     version = null
 }
 
+dependencies {    
+    compile 'com.fasterxml.jackson.core:jackson-databind:2.15.0'
+}
+
 repositories {        
-     maven { url "http://repo.maven.apache.org/maven2" }
+     mavenCentral()
 }
