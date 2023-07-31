@@ -1,4 +1,4 @@
-package com.kren.pattern.composite.rev26072023.composite;
+package com.kren.pattern.rev26072023.composite;
 
 import java.util.List;
 
