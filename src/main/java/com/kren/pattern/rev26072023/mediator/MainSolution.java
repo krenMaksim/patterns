@@ -1,14 +1,14 @@
 package com.kren.pattern.rev26072023.mediator;
 
-import java.util.Objects;
-
 class MainSolution {
 
     public static void main(String[] args) {
-        Button button = new Button();
-        PowerSupplier powerSupplier = new PowerSupplier(button);
-        button.attachPowerSupplier(powerSupplier);
-        Fan fan = new Fan(button, powerSupplier);
+        Controller controller = new Controller();
+        Button button = new Button(controller);
+        PowerSupplier powerSupplier = new PowerSupplier(controller);
+        controller.add(button);
+        controller.add(powerSupplier);
+        Fan fan = new Fan(controller);
 
         fan.clickButton();
         System.out.println(fan.isOn());
@@ -33,45 +33,78 @@ class MainSolution {
 
     }
 
-    static class Fan {
+    static class Controller {
 
-        private final Button button;
-        private final PowerSupplier powerSupplier;
+        private Button button;
+        private PowerSupplier powerSupplier;
 
-        public Fan(Button button, PowerSupplier powerSupplier) {
+        public void add(Button button) {
             this.button = button;
+        }
+
+        public void add(PowerSupplier powerSupplier) {
             this.powerSupplier = powerSupplier;
+        }
+
+        public boolean isButtonOn() {
+            return button.isOn();
+        }
+
+        public boolean isPowerSupplierOn() {
+            return powerSupplier.isOn();
         }
 
         public void clickButton() {
             button.click();
         }
 
-        public void powerOff() {
+        public void powerSupplierOff() {
             powerSupplier.turnOff();
         }
 
-        public void powerOn() {
+        public void powerSupplierOn() {
             powerSupplier.turnOn();
         }
 
+    }
+
+    static class Fan {
+
+        private final Controller controller;
+
+        public Fan(Controller controller) {
+            this.controller = controller;
+        }
+
+        public void clickButton() {
+            controller.clickButton();
+        }
+
+        public void powerOff() {
+            controller.powerSupplierOff();
+        }
+
+        public void powerOn() {
+            controller.powerSupplierOn();
+        }
+
         public boolean isOn() {
-            return button.isOn();
+            return controller.isButtonOn();
         }
     }
 
     static class Button {
 
-        private boolean isOn = false;
-        private PowerSupplier powerSupplier;
+        private boolean isOn;
+        private final Controller controller;
 
-        public void attachPowerSupplier(PowerSupplier powerSupplier) {
-            this.powerSupplier = powerSupplier;
+        public Button(Controller controller) {
+            this.isOn = false;
+            this.controller = controller;
         }
 
         public void click() {
-            Objects.requireNonNull(powerSupplier);
-            if (powerSupplier.isOn()) {
+            if (controller.isPowerSupplierOn()) {
                 isOn = !isOn;
             }
         }
@@ -85,11 +118,11 @@ class MainSolution {
     static class PowerSupplier {
 
         private boolean isOn;
-        private Button button;
+        private final Controller controller;
 
-        public PowerSupplier(Button button) {
+        public PowerSupplier(Controller controller) {
             this.isOn = false;
-            this.button = button;
+            this.controller = controller;
         }
 
         public void turnOn() {
@@ -97,8 +130,8 @@ class MainSolution {
         }
 
         public void turnOff() {
-            if (button.isOn()) {
-                button.click();
+            if (controller.isButtonOn()) {
+                controller.clickButton();
             }
             isOn = false;
         }
