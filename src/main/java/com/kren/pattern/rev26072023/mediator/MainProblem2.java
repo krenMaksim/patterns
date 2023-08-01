@@ -1,9 +1,14 @@
 package com.kren.pattern.rev26072023.mediator;
 
+import java.util.Objects;
+
 class MainProblem2 {
 
     public static void main(String[] args) {
-        Fan fan = new Fan(new Button(), new PowerSupplier());
+        Button button = new Button();
+        PowerSupplier powerSupplier = new PowerSupplier(button);
+        button.attachPowerSupplier(powerSupplier);
+        Fan fan = new Fan(button, powerSupplier);
 
         fan.clickButton();
         System.out.println(fan.isOn());
@@ -25,8 +30,6 @@ class MainProblem2 {
 
         fan.clickButton();
         System.out.println(fan.isOn());
-
-        // ------------------------
 
     }
 
@@ -62,7 +65,12 @@ class MainProblem2 {
         private boolean isOn = false;
         private PowerSupplier powerSupplier;
 
+        public void attachPowerSupplier(PowerSupplier powerSupplier) {
+            this.powerSupplier = powerSupplier;
+        }
+
         public void click() {
+            Objects.requireNonNull(powerSupplier);
             if (powerSupplier.isOn()) {
                 isOn = !isOn;
             }
@@ -76,8 +84,13 @@ class MainProblem2 {
 
     static class PowerSupplier {
 
-        private boolean isOn = false;
+        private boolean isOn;
         private Button button;
+
+        public PowerSupplier(Button button) {
+            this.isOn = false;
+            this.button = button;
+        }
 
         public void turnOn() {
             isOn = true;
