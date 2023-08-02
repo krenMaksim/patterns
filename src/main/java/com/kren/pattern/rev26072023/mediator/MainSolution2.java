@@ -1,13 +1,9 @@
 package com.kren.pattern.rev26072023.mediator;
 
-class MainSolution {
+class MainSolution2 {
 
     public static void main(String[] args) {
-        Controller controller = new Controller();
-        Button button = new Button(controller);
-        PowerSupplier powerSupplier = new PowerSupplier(controller);
-        controller.add(button);
-        controller.add(powerSupplier);
+        Controller controller = new Controller(new Button(), new PowerSupplier());
         Fan fan = new Fan(controller);
 
         fan.clickButton();
@@ -35,14 +31,11 @@ class MainSolution {
 
     static class Controller {
 
-        private Button button;
-        private PowerSupplier powerSupplier;
+        private final Button button;
+        private final PowerSupplier powerSupplier;
 
-        public void add(Button button) {
+        public Controller(Button button, PowerSupplier powerSupplier) {
             this.button = button;
-        }
-
-        public void add(PowerSupplier powerSupplier) {
             this.powerSupplier = powerSupplier;
         }
 
@@ -55,10 +48,19 @@ class MainSolution {
         }
 
         public void clickButton() {
-            button.click();
+            if (powerSupplier.isOn()) {
+                button.click();
+            } else {
+                if (button.isOn()) {
+                    button.click();
+                }
+            }
         }
 
         public void powerSupplierOff() {
+            if (button.isOn()) {
+                button.click();
+            }
             powerSupplier.turnOff();
         }
 
@@ -89,24 +91,16 @@ class MainSolution {
         }
 
         public boolean isOn() {
-            return controller.isButtonOn();
+            return controller.isButtonOn() && controller.isPowerSupplierOn();
         }
     }
 
     static class Button {
 
-        private boolean isOn;
-        private final Controller controller;
-
-        public Button(Controller controller) {
-            this.isOn = false;
-            this.controller = controller;
-        }
+        private boolean isOn = false;
 
         public void click() {
-            if (controller.isPowerSupplierOn()) {
-                isOn = !isOn;
-            }
+            isOn = !isOn;
         }
 
         public boolean isOn() {
@@ -115,24 +109,15 @@ class MainSolution {
 
     }
 
-    static class PowerSupplier { // TODO I do not like how this abstraction looks like. Functionality related to Button might be excessive.
+    static class PowerSupplier {
 
-        private boolean isOn;
-        private final Controller controller;
-
-        public PowerSupplier(Controller controller) {
-            this.isOn = false;
-            this.controller = controller;
-        }
+        private boolean isOn = false;
 
         public void turnOn() {
             isOn = true;
         }
 
         public void turnOff() {
-            if (controller.isButtonOn()) {
-                controller.clickButton();
-            }
             isOn = false;
         }
 
